@@ -1,0 +1,39 @@
+package com.himanshu.hibrnate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.himanshu.dto.Address;
+import com.himanshu.dto.UserDetails3;
+
+public class HibernateTest3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserDetails3 ud =new UserDetails3();
+		ud.setUserName("First");
+		Address ad = new Address();
+		ad.setCity("city");
+		ad.setStreet("city");
+		ad.setState("city");
+		ad.setPin("city");
+		
+		Address ad1 = new Address();
+		ad1.setCity("city1");
+		ad1.setStreet("city1");
+		ad1.setState("city1");
+		ad1.setPin("city1");
+		ud.getAddress().add(ad1);
+		ud.getAddress().add(ad);
+		
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		Session se = sf.openSession();
+		se.beginTransaction();
+		se.save(ud);
+		se.getTransaction().commit();
+		se.close();
+		
+		
+	}
+}

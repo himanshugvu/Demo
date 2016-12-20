@@ -1,0 +1,31 @@
+
+public class MergeArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] a = {0,3,6,7};
+		int[] b = {1,2,3,4};
+		int[] o = new int[a.length*2];
+		int a1=0,b1=0,num=a[0];
+		for(int i=0;i<b.length*2;i++){
+			if(num<=b[b1]){
+				o[i]=a[a1];
+				if(a1!=a.length-1){
+				a1++;
+				num=a[a1];
+				}else{
+					num=b[b1];
+				}
+			}else{
+				o[i]=b[b1];
+				if(b1!=b.length-1)
+				b1++;
+			}
+		}
+		for(int i=0;i<o.length;i++)
+		System.out.print(o[i]);
+	}
+
+	
+}

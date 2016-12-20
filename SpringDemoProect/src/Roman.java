@@ -1,0 +1,73 @@
+
+public class Roman {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num=922,n=0,temp=0;;
+		StringBuffer sb = new StringBuffer();
+		while(num!=0){
+			n = getNum(num);
+			temp=n;
+		if(n>=900 && n<1000){
+			sb.append("CM");
+		}else if(n>=500 && n<900){
+			sb.append("D");
+			while(n!=500){
+				sb.append("C");
+				n=n-100;
+			}
+		}else if(n>=400 && n<500){
+			sb.append("CD");
+		}else if(n>=100 && n<400){
+			sb.append("C");
+			while(n!=100){
+				sb.append("C");
+				n=n-100;
+			}
+		}else if(n>=90 && n<100){
+			sb.append("XC");
+		}else if(n>=50 && n<90){
+			sb.append("L");
+			while(n!=50){
+				sb.append("X");
+				n=n-10;
+			}
+		}else if(n>=40 && n<50){
+			sb.append("XL");
+		}else if(n>=10 && n<40){
+			sb.append("X");
+			while(n!=10){
+				sb.append("X");
+				n=n-10;
+			}
+		}else if(n>=9 && n<10){
+			sb.append("IX");
+		}else if(n>=5 && n<9){
+			sb.append("V");
+			while(n!=5){
+				sb.append("I");
+				n=n-1;
+			}
+		}else if(n>=4 && n<5){
+			sb.append("IV");
+		}else {
+			sb.append("I");
+			while(n!=1){
+				sb.append("I");
+				n=n-1;
+			}
+		}
+		num=num-temp;
+		}
+System.out.println(sb);
+	}
+	public static int getNum(int num){
+		int n=10;
+		while(num!=num%n){
+			num=num-num%n;
+			n=n*10;
+		}
+		return num;
+		
+	}
+}

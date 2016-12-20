@@ -1,0 +1,52 @@
+package com.lynda.javatraining.db;
+
+import java.lang.Thread.State;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.lynda.javatraining.db.tables.States;
+import com.lynda.javatraining.db.tables.Tours;
+
+public class Main {
+
+	public static int getResult(String num, int mul){
+		
+		int number=Integer.parseInt(num);
+		int sum =calculate(number);
+		sum*=mul;
+		while(sum >10){
+			sum=calculate(sum);
+		}
+		return sum;
+	}
+	
+	public static int calculate(int number){
+		int sum=0;
+		while(number>0){
+			sum+=number%10;
+			number/=10;
+		}
+		return sum;
+	}
+	
+	public static void main(String[] args) throws SQLException {
+		
+		/*try (
+				Connection conn=DBUtil.getConnection(DBType.MYSQL);
+				Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				ResultSet rst=stmt.executeQuery("select * from states");
+				){
+
+			//Tours.displayData(rst);
+			States.displayData(rst);
+		} catch (SQLException e) {
+			DBUtil.processException(e);
+		}*/
+		System.out.println(getResult("123", 3));
+		}
+		
+	}
+
