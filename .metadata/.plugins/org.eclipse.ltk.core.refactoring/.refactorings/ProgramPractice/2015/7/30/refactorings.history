@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;org.matrix.Matrix.callMethod()&apos; to &apos;matchWord&apos;&#x0A;- Original project: &apos;ProgramPractice&apos;&#x0A;- Original element: &apos;org.matrix.Matrix.callMethod()&apos;&#x0A;- Renamed element: &apos;org.matrix.Matrix.matchWord()&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;callMethod&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;org.matrix{Matrix.java[Matrix~callMethod" name="matchWord" references="true" stamp="1437412508082" version="1.0"/>
+</session>

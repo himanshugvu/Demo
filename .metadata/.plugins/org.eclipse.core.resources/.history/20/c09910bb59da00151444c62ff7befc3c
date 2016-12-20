@@ -1,0 +1,17 @@
+
+public class MergeArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] a = {0,3,6,7};
+		int[] b = {1,2,3,4};
+		int[] o = new int[a.length*2];
+		int a1=0,b1=0;
+		for(int i=0;i<b.length*2;i++){
+			
+		}
+
+	}
+
+}
